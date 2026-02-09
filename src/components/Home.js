@@ -60,19 +60,19 @@ const Home = () => {
                 <div className="feature-box">
                     <h3>Quality Education</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
-                    <a href="#" className="feature-btn">EXPLORE →</a>
+                    <a href="/" className="feature-btn">EXPLORE →</a>
                 </div>
 
                 <div className="feature-box">
                     <h3>Experienced Teachers</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
-                    <a href="#" className="feature-btn">EXPLORE →</a>
+                    <a href="/" className="feature-btn">EXPLORE →</a>
                 </div>
 
                 <div className="feature-box">
                     <h3>Delicious Food</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
-                    <a href="#" className="feature-btn">EXPLORE →</a>
+                    <a href="/" className="feature-btn">EXPLORE →</a>
                 </div>
             </section>
 
@@ -405,3 +405,4 @@ const Home = () => {
 };
 
 export default Home;
+
