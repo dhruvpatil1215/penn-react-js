@@ -32,7 +32,7 @@ const Home = () => {
 
                 {/* RIGHT */}
                 <div className="hero-right">
-                    <img className="hero-img" src={require("../assets/images/all-img/home-image.png")} alt="Hero Image" />
+                    <img className="hero-img" src={require("../assets/images/all-img/home-image.png")} alt="Hero" />
 
                     <div className="card students">
                         <div className="card-icon">
@@ -405,4 +405,5 @@ const Home = () => {
 };
 
 export default Home;
+
 
