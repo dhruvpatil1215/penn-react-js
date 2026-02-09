@@ -32,10 +32,10 @@ function App() {
           <nav>
             <Link to="/">Home <i className="fa-solid fa-chevron-down"></i></Link>
             <Link to="/about">About Us <i className="fa-solid fa-chevron-down"></i></Link>
-            <a href="#">Pages <i className="fa-solid fa-chevron-down"></i></a>
-            <a href="#">Courses <i className="fa-solid fa-chevron-down"></i></a>
-            <a href="#">Blog <i className="fa-solid fa-chevron-down"></i></a>
-            <a href="#">Contact</a>
+            <a href="/">Pages <i className="fa-solid fa-chevron-down"></i></a>
+            <a href="/">Courses <i className="fa-solid fa-chevron-down"></i></a>
+            <a href="/">Blog <i className="fa-solid fa-chevron-down"></i></a>
+            <a href="/">Contact</a>
           </nav>
 
           <div className="header-right">
@@ -68,3 +68,4 @@ function App() {
 }
 
 export default App;
+
