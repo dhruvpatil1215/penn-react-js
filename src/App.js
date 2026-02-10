@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Simulate initial page load
@@ -29,16 +30,20 @@ function App() {
             </Link>
           </div>
 
-          <nav>
-            <Link to="/">Home <i className="fa-solid fa-chevron-down"></i></Link>
-            <Link to="/about">About Us <i className="fa-solid fa-chevron-down"></i></Link>
-            <a href="/">Pages <i className="fa-solid fa-chevron-down"></i></a>
-            <a href="/">Courses <i className="fa-solid fa-chevron-down"></i></a>
-            <a href="/">Blog <i className="fa-solid fa-chevron-down"></i></a>
-            <a href="/">Contact</a>
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? '✕' : '☰'}
+          </button>
+
+          <nav className={menuOpen ? 'nav-active' : ''}>
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home <i className="fa-solid fa-chevron-down"></i></Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>About Us <i className="fa-solid fa-chevron-down"></i></Link>
+            <a href="/" onClick={() => setMenuOpen(false)}>Pages <i className="fa-solid fa-chevron-down"></i></a>
+            <a href="/" onClick={() => setMenuOpen(false)}>Courses <i className="fa-solid fa-chevron-down"></i></a>
+            <a href="/" onClick={() => setMenuOpen(false)}>Blog <i className="fa-solid fa-chevron-down"></i></a>
+            <a href="/" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
 
-          <div className="header-right">
+          <div className={`header-right ${menuOpen ? 'nav-active' : ''}`}>
             <div className="header-icons">
               <div className="icon-item">
                 <i className="fa-regular fa-heart"></i>
@@ -68,4 +73,3 @@ function App() {
 }
 
 export default App;
-
