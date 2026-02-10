@@ -32,7 +32,7 @@ const Home = () => {
 
                 {/* RIGHT */}
                 <div className="hero-right">
-                    <img className="hero-img" src={require("../assets/images/all-img/home-image.png")} alt="Hero" />
+                    <img className="hero-img" src={require("../assets/images/all-img/home-image.png")} alt="Hero Image" />
 
                     <div className="card students">
                         <div className="card-icon">
@@ -333,12 +333,19 @@ const Home = () => {
                     <span className="topics-small">START LEARNING</span>
                     <h2>Popular <span>Topics To Learn</span> From Today.</h2>
                     <div className="topics-grid">
-                        {[1, 2, 3, 4, 5, 6].map(num => (
-                            <div className="topic-card" key={num}>
-                                <img src={require(`../assets/images/all-img/ct${num}.svg`)} className="topic-icon" alt="Topic" />
+                        {[
+                            { name: 'UI/UX Design', courses: '71 Courses', icon: 'ct1' },
+                            { name: 'Digital Program', courses: '59 Courses', icon: 'ct2' },
+                            { name: 'Finance', courses: '68 Courses', icon: 'ct3' },
+                            { name: 'Modern Physics', courses: '83 Courses', icon: 'ct4' },
+                            { name: 'Music Production', courses: '37 Courses', icon: 'ct5' },
+                            { name: 'Data Science', courses: '51 Courses', icon: 'ct6' },
+                        ].map((topic, index) => (
+                            <div className="topic-card" key={index}>
+                                <img src={require(`../assets/images/all-img/${topic.icon}.svg`)} className="topic-icon" alt={topic.name} />
                                 <div>
-                                    <h3>Topic {num}</h3>
-                                    <p>Courses Available</p>
+                                    <h3>{topic.name}</h3>
+                                    <p>{topic.courses}</p>
                                 </div>
                             </div>
                         ))}
@@ -405,5 +412,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
