@@ -11,6 +11,12 @@ body {
   background: white;
   color: #1f2a44;
   overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ================= NAVBAR ================= */
@@ -21,7 +27,17 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 100;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #0c162d;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 .logo {
@@ -314,7 +330,8 @@ body {
 }
 
 .hero-img {
-  width: 10000px;
+  width: 100%;
+  max-width: 600px;
   height: auto;
   position: relative;
   z-index: 3;
@@ -425,37 +442,7 @@ body {
   top: 100px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .hero-left,
-  .hero-right {
-    width: 100%;
-  }
-
-  .hero-left h1 {
-    font-size: 36px;
-  }
-
-  .hero-img {
-    width: 300px;
-  }
-
-  .card {
-    position: static;
-    margin-top: 16px;
-  }
-
-  .hero-right::before,
-  .hero-right::after {
-    display: none;
-  }
-}
+/* End of Navbar/Hero non-responsive section */
 
 /* ================= FEATURE ROW ================= */
 .feature-row {
@@ -691,20 +678,6 @@ body {
   transform: scale(0.98);
 }
 
-@media(max-width:768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-right h1 {
-    font-size: 32px;
-  }
-
-  .about-card {
-    text-align: left;
-  }
-}
 
 /* ================= ACHIEVEMENT SECTION ================= */
 .achievement-section {
@@ -811,17 +784,6 @@ body {
   color: #d81b60;
 }
 
-@media(max-width:900px) {
-  .achievement-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media(max-width:500px) {
-  .achievement-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ================= TRUSTED SECTION ================= */
 .trusted-section {
@@ -1350,6 +1312,20 @@ body {
   .platform-left h2 {
     font-size: 34px;
   }
+
+  .platform-img {
+    margin-top: 40px;
+  }
+}
+
+@media(max-width:600px) {
+  .platform-left h2 {
+    font-size: 28px;
+  }
+
+  .platform-section {
+    padding: 60px 0;
+  }
 }
 
 /* ================= NEWSLETTER SECTION ================= */
@@ -1421,6 +1397,7 @@ body {
   box-shadow: 0 5px 15px rgba(39, 203, 139, 0.3);
 }
 
+
 /* ================= TOPICS SECTION ================= */
 .topics-section {
   padding: 100px 0;
@@ -1458,6 +1435,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
+
 
 .topic-card {
   background: #fff;
@@ -1555,6 +1533,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }
+
 
 .event-card {
   background: #fff;
@@ -1753,6 +1732,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, .05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .testimonial-card:hover {
   transform: translateY(-5px);
@@ -2635,4 +2615,516 @@ a:focus {
   padding-top: 30px;
   text-align: center;
   color: #a0aec0;
+}
+
+/* =======================================================
+   RESPONSIVE BREAKPOINTS
+   ======================================================= */
+
+/* ================= TABLET (≤ 992px) ================= */
+@media (max-width: 992px) {
+
+  /* --- Navbar --- */
+  .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2;
+  }
+
+  .header-left {
+    order: 1;
+  }
+
+  .navbar nav {
+    display: none;
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    gap: 5px;
+  }
+
+  .navbar nav.nav-active {
+    display: flex;
+  }
+
+  .navbar nav a {
+    margin: 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .navbar nav a:hover {
+    background: #f0fdf7;
+  }
+
+  .navbar nav a::after {
+    display: none;
+  }
+
+  .header-right {
+    display: none;
+    order: 4;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    gap: 20px;
+  }
+
+  .header-right.nav-active {
+    display: flex;
+  }
+
+  .auth {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    min-height: auto;
+    background-position: center bottom;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 48px;
+  }
+
+  .hero-left p {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-wrap {
+    justify-content: center;
+  }
+
+  .hero-right {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .hero-img {
+    max-width: 400px;
+  }
+
+  .card.students,
+  .card.courses {
+    display: none;
+  }
+
+  .ring-light {
+    display: none;
+  }
+
+  /* --- Feature Row --- */
+  .feature-row {
+    flex-direction: column;
+  }
+
+  .feature-box {
+    width: 100%;
+    padding: 40px 30px;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .feature-box:last-child {
+    border-bottom: none;
+  }
+
+  /* --- About --- */
+  .about-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-right h1 {
+    font-size: 36px;
+  }
+
+  /* --- Achievement --- */
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .achievement-container h2 {
+    font-size: 34px;
+  }
+
+  /* --- Topics --- */
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topics-container h2 {
+    font-size: 34px;
+  }
+
+  /* --- Events --- */
+  .events-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .events-container h2 {
+    font-size: 36px;
+  }
+
+  /* --- Testimonials --- */
+  .testimonial-container h2 {
+    font-size: 34px;
+  }
+
+  .testimonial-nav {
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-card {
+    min-width: 280px;
+  }
+
+  /* --- Team --- */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-container h2 {
+    font-size: 34px;
+  }
+
+  /* --- Newsletter --- */
+  .newsletter-container h2 {
+    font-size: 32px;
+  }
+
+  /* --- Footer --- */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  /* --- About Page --- */
+  .about-hero h1 {
+    font-size: 40px;
+  }
+
+  .mv-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= MOBILE (≤ 768px) ================= */
+@media (max-width: 768px) {
+
+  /* --- Navbar --- */
+  .logo {
+    width: 100px;
+  }
+
+  /* --- Hero --- */
+  .hero-left h1 {
+    font-size: 36px;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+  .hero-img {
+    max-width: 300px;
+  }
+
+  /* --- About --- */
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-right h1 {
+    font-size: 28px;
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* --- Achievement --- */
+  .achievement-section {
+    padding: 50px 0;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-container h2 {
+    font-size: 28px;
+    margin: 15px 0 30px;
+  }
+
+  .ach-text h3 {
+    font-size: 28px;
+  }
+
+  /* --- Features --- */
+  .features-section {
+    padding: 50px 0;
+  }
+
+  .features-container h2 {
+    font-size: 28px;
+    margin: 10px 0 30px;
+  }
+
+  /* --- Courses --- */
+  .courses-section {
+    padding: 50px 0;
+  }
+
+  .courses-container h2 {
+    font-size: 28px;
+    margin: 10px 0 30px;
+  }
+
+  /* --- Platform --- */
+  .platform-section {
+    padding: 50px 0;
+  }
+
+  .platform-left h2 {
+    font-size: 28px;
+  }
+
+  /* --- Topics --- */
+  .topics-section {
+    padding: 50px 0;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topics-container h2 {
+    font-size: 28px;
+    margin: 10px 0 30px;
+  }
+
+  /* --- Events --- */
+  .events-section {
+    padding: 50px 0;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-container h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  /* --- Testimonials --- */
+  .testimonial-section {
+    padding: 50px 0;
+  }
+
+  .testimonial-container h2 {
+    font-size: 28px;
+    margin: 10px 0 30px;
+  }
+
+  .testimonial-card {
+    min-width: 250px;
+  }
+
+  /* --- Team --- */
+  .team-section {
+    padding: 50px 0;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-container h2 {
+    font-size: 28px;
+    margin: 10px 0 30px;
+  }
+
+  .team-card img {
+    height: 250px;
+  }
+
+  /* --- Newsletter --- */
+  .newsletter-section {
+    padding: 60px 0;
+  }
+
+  .newsletter-container h2 {
+    font-size: 24px;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 50px 0 20px;
+    margin-top: 50px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-subscribe {
+    justify-content: center;
+  }
+
+  /* --- About Page --- */
+  .about-hero {
+    padding: 60px 20px;
+  }
+
+  .about-hero h1 {
+    font-size: 30px;
+  }
+
+  .mission-vision-section {
+    padding: 50px 0;
+  }
+
+  .about-stats-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-box h2 {
+    font-size: 36px;
+  }
+
+  .about-cta-section {
+    padding: 60px 20px;
+  }
+}
+
+/* ================= SMALL MOBILE (≤ 480px) ================= */
+@media (max-width: 480px) {
+
+  /* --- Hero --- */
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .cta {
+    font-size: 13px;
+  }
+
+  .hero-img {
+    max-width: 250px;
+  }
+
+  /* --- Feature Row --- */
+  .feature-box {
+    padding: 30px 20px;
+  }
+
+  .feature-box h3 {
+    font-size: 18px;
+  }
+
+  /* --- About --- */
+  .about-section {
+    padding: 30px 0;
+  }
+
+  .about-right h1 {
+    font-size: 24px;
+  }
+
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  /* --- Newsletter --- */
+  .newsletter-container h2 {
+    font-size: 20px;
+  }
+
+  .newsletter-form input {
+    padding: 16px 50px 16px 20px;
+    font-size: 14px;
+  }
+
+  .newsletter-form button {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* --- Auth buttons --- */
+  .login,
+  .signup {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  /* --- Topic cards --- */
+  .topic-card {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .topic-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
