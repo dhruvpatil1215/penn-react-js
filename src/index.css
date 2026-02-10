@@ -6,10 +6,19 @@
 }
 
 /* ================= BASE ================= */
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: white;
   color: #1f2a44;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
   overflow-x: hidden;
   width: 100%;
 }
@@ -2698,10 +2707,20 @@ a:focus {
   /* --- Hero --- */
   .hero {
     flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
     min-height: auto;
-    background-position: center bottom;
+    background-image: none;
+    background-color: #f8fdfa;
     text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg-shapes,
+  .shape,
+  .circle-green,
+  .circle-pink {
+    display: none;
   }
 
   .hero-left {
